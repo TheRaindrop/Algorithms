@@ -21,5 +21,15 @@ const merge = (A, p, q, r) => {
             j++
         }
     }
+    console.log(A)
 }
-merge([2,4,5,7,1,2,3,6], 0, 3, 7)
+
+const mergeSort = (A, p = 0, r = A.length - 1) => {
+    if (p < r) {
+        let q = Math.floor((p + r) / 2)
+        mergeSort(A, p, q)
+        mergeSort(A, q + 1, r)
+        merge(A, p, q, r)
+    }
+}
+mergeSort([2,4,5,6,84,3,5])
