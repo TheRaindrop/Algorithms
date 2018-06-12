@@ -9,8 +9,8 @@ const merge = (A, p, q, r) => {
     for (let i = 0; i < n2; i++) {
         R[i] = A[q + 1 + i]
     }
-    L[n1] = Number.POSITIVE_INFINITY
-    R[n2] = Number.POSITIVE_INFINITY
+    // L[n1] = Number.POSITIVE_INFINITY
+    // R[n2] = Number.POSITIVE_INFINITY
     let i = 0, j = 0
     for (let k = p; k <= r; k++) {
         if (L[i] <= R[j]) {
@@ -19,6 +19,13 @@ const merge = (A, p, q, r) => {
         } else {
             A[k] = R[j]
             j++
+        }
+        if (i === L.length) {
+            A = A.concat(R.splice(j))
+            break
+        } else if (j = R.length) {
+            A = A.concat(L.splice(i))
+            break
         }
     }
     console.log(A)
