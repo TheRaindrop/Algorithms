@@ -1,7 +1,8 @@
 const findMaxCrossingSubarray = (A, low, mid, high) => {
     let leftSum, rightSum = Number.NEGATIVE_INFINITY
     let sum = 0
-    let maxLeft, maxRight = mid
+    let maxLeft = mid
+    let maxRight = mid + 1
     for (let i = mid; i >= low; i--) {
         sum += A[i]
         if (sum > leftSum) {
@@ -34,8 +35,8 @@ const findMaximumSubarray = (A, low, high) => {
         } else if (rightSum >= leftSum && rightSum >= crossSum) {
             return { rightLow, rightHigh, rightSum }
         } else {
+            console.log({ crossLow, crossHigh, crossSum })
             return { crossLow, crossHigh, crossSum }
         }
     }
-
 }

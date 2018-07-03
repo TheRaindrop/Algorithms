@@ -2,7 +2,7 @@ const insertionSort = (a) => {
     for (let i = 1; i < a.length; i++) {
         let key = a[i]  //this is the insertion-sort's point
         let j = i - 1
-        whilt(j >= 0 && a[j] > key) {
+        while (j >= 0 && a[j] > key) {
             a[j+1] = a[j]
             j--
         }
